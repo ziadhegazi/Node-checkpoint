@@ -6,11 +6,13 @@ const filter = (dirName, fileExt, callback) => {
         if (err) {
             return callback(err);
         }
-        for (file of files) {
-            if (file.includes("." + fileExt)) {
-                callback(null, file);
-            }
-        }
+        let array = files.filter(e => e.includes("." + fileExt));
+        // for (file of files) {
+        //     if (file.includes("." + fileExt)) {
+        //         array.push(file)
+        //     }
+        // }
+        callback(null, array);
     })
 }
 

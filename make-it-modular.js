@@ -7,7 +7,9 @@ const filterCallback = (err, files) => {
     if (err) {
         console.error(err);
     }
-    console.log(files);
+    files.forEach(file => {
+        console.log(file)
+    });;
 }
 
 filter(args[2], args[3], filterCallback);
